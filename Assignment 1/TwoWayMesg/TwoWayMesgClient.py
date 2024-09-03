@@ -20,15 +20,16 @@ clientSockFile = clientSock.makefile('rwb')
 print(f"Connected to server at {clientSock.getsockname()}")
 
 while True:
-    # Get user input
+    # Get user input with name
     message = input('Enter your message: ')
 
     # Send the message to the server with the client name
-    clientSockFile.write(( message + '\n').encode())
-    clientSockFile.flush()  # Ensure the message is sent immediately
+    clientSockFile.write((client_name + ": " + message + '\n').encode())
+    # Ensure the message is sent immediately
+    clientSockFile.flush()
 
     # Wait for a response from the server
     response = clientSockFile.readline().decode()
 
     # Display the server's response
-    print(f"Server: {response}", end='')
+    print(f"{response}", end='')

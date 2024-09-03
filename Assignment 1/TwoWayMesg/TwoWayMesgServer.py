@@ -33,11 +33,12 @@ while True:
         break
 
     # Display the client's message
-    print(f"Client: {message}", end='')
+    print(f"{message}", end='')
 
     # Get a response from the server user
     response = input('Enter your message: ')
 
     # Send the response to the client with the server name
-    clientSockFile.write((response + '\n').encode())
-    clientSockFile.flush()  # Make sure the message is sent immediately
+    clientSockFile.write((server_name + ": " +  response + '\n').encode())
+    # Make sure the message is sent immediately
+    clientSockFile.flush()  
