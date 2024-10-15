@@ -1,0 +1,11 @@
+https://stackoverflow.com/questions/22251809/python-select-select-on-windows
+
+=============
+Python select error for Windows
+=============
+
+Connected to server at ('localhost', '50000')
+Traceback (most recent call last):
+  File "C:\Users\sanji\Dropbox\USC\teaching\csce416\22f\materials\Assignments\Assign2\TwoWayAsyncMesg\python\TwoWayAsyncMesgClient.py", line 39, in <module>
+    readableSet, x, x = select(inputSet,[],[])
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
